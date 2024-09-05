@@ -1,7 +1,7 @@
 # Movie_dataset_sql_beginner_project
 ## Project Overview
 
-![IMG_20240905_163222](https://github.com/user-attachments/assets/3bc0386b-6f02-4e1c-ad05-62d9d28c4e1b)
+![Screenshot 2024-09-05 163425](https://github.com/user-attachments/assets/329f4da5-07fd-4a51-8de1-dfb9abdd5df6)
 
 
 **Project Title**: Movie recommendation tool 

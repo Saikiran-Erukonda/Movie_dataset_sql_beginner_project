@@ -1,4 +1,5 @@
 # Movie_dataset_sql_beginner_project
+![image](https://github.com/user-attachments/assets/a1cb9e63-e2f5-4e61-b5b8-c4476c85b8d5)
 
 ## Project Overview
 

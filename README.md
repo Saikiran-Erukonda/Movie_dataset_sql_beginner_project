@@ -157,7 +157,7 @@ Select rating,count(rating) as  mode_of_data
 ![Screenshot 2024-09-05 163425](https://github.com/user-attachments/assets/8fc155db-2cb0-40b5-b0e5-d6d426dc9874)
 
 -------------------------------------------------------------------------------------------------------
-**Refer to `Movie recommendation.sql` file to understand the queries for creating tables from select and performing inner join**
+**Refer to [`Movie recommendation.sql`](https://github.com/Saikiran-Erukonda/Movie_dataset_sql_beginner_project/blob/main/Movie%20recommendation.sql) file to understand the queries for creating tables from select and performing inner join**
 
 6. **Write a SQL query to find which movie is most popular based on average user ratings.**:
 ```sql

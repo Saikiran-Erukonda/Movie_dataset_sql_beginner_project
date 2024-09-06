@@ -1,9 +1,6 @@
 # Movie_dataset_sql_beginner_project
 ## Project Overview
 
-![Screenshot 2024-09-05 163425](https://github.com/user-attachments/assets/329f4da5-07fd-4a51-8de1-dfb9abdd5df6)
-
-
 **Project Title**: Movie recommendation tool 
 	**Level**: Beginner  
 **Database**: `Movies.csv`,`ratings.csv`,`tags.csv`
@@ -156,56 +153,10 @@ Select rating,count(rating) as  mode_of_data
 	3. Filter only those movies which have more than 50 user ratings**
 
 -- Create two more tables grouped_data which results from step 1, joint_data which obtained from innner join.
-```sql
-/* 1.Group user ratings based on movieid and apply aggregation operations like count and mean on ratings
-	3. Filter only those movies which have more than 50 user ratings    */
-select movieid,avg_rating,no_of_R from(select movieId,avg(rating) as avg_rating,count(rating) as no_of_R
-	from ratings group by movieId 
-	order by no_of_R desc) where no_of_r >50;
--- creating table and inserting above data into it.
---------------------------------------------------------------------------------------------
-create table grouped_data(
-		movieid		 int primary key,
-		avg_rating   float,
-		no_of_r		 int
-);
-
-INSERT INTO grouped_data(movieid, avg_rating,no_of_r)
-select movieid,avg_rating,no_of_R from(select movieId,avg(rating) as avg_rating,count(rating) as no_of_R
-	from ratings group by movieId 
-	order by no_of_R desc) where no_of_r >50;
-	
-select * from grouped_data;
 -------------------------------------------------------------------------------------------------------
--- 2.Apply inner join on dataframe created from movies.csv and the grouped data df from step 1.
-select grouped_data.movieid,
-	   Movie.title,
-	   grouped_data.avg_rating,
-	   grouped_data.no_of_r,Movie.genres from grouped_data inner join Movie on grouped_data.movieid = Movie.movieId;
-	   
--- Let's save this into a table for futher operations
-drop table if exists joint_data;
-create table joint_data(
-		movieid int primary key,
-		title   varchar(500),
-		avg_rating float,
-		no_of_r   int,
-		genres   varchar(300)
-);
+![Screenshot 2024-09-05 163425](https://github.com/user-attachments/assets/8fc155db-2cb0-40b5-b0e5-d6d426dc9874)
 
-insert into joint_data(movieid,
-		title,
-		avg_rating,
-		no_of_r,genres)
-select grouped_data.movieid,
-	   Movie.title,
-	   grouped_data.avg_rating,
-	   grouped_data.no_of_r,
-	   Movie.genres from grouped_data inner join Movie on grouped_data.movieid = Movie.movieId;
---test the results	   
-select * from joint_data limit 100;
 -------------------------------------------------------------------------------------------------------
-```
 6. **Write a SQL query to find which movie is most popular based on average user ratings.**:
 ```sql
 select title from joint_data order by avg_rating desc limit 1;

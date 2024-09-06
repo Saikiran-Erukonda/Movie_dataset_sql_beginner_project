@@ -153,10 +153,12 @@ Select rating,count(rating) as  mode_of_data
 	3. Filter only those movies which have more than 50 user ratings**
 
 -- Create two more tables grouped_data which results from step 1, joint_data which obtained from innner join.
--------------------------------------------------------------------------------------------------------
+--
 ![Screenshot 2024-09-05 163425](https://github.com/user-attachments/assets/8fc155db-2cb0-40b5-b0e5-d6d426dc9874)
 
 -------------------------------------------------------------------------------------------------------
+**Refer to `Movie recommendation.sql` file to understand the queries for creating tables from select and performing inner join**
+
 6. **Write a SQL query to find which movie is most popular based on average user ratings.**:
 ```sql
 select title from joint_data order by avg_rating desc limit 1;

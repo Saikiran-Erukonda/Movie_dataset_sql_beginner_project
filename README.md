@@ -155,7 +155,7 @@ Select rating,count(rating) as  mode_of_data
 	2. Apply inner join on dataframe created from movies.csv and the grouped data df from step 1.
 	3. Filter only those movies which have more than 50 user ratings**
 
--- Create two more tables grouped_data which results from step 1, joint_data which results from innner join.
+-- Create two more tables grouped_data which results from step 1, joint_data which obtained from innner join.
 ```sql
 /* 1.Group user ratings based on movieid and apply aggregation operations like count and mean on ratings
 	3. Filter only those movies which have more than 50 user ratings    */
